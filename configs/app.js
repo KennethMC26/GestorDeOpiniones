@@ -6,7 +6,7 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 
 import { corsOptions } from '../configs/cors-configuration.js';
-import { dbConnection } from '../../server-admin/configs/db.js';
+import { dbConnection } from '../configs/db.js';
 import { helmetConfiguration } from '../configs/helmet-configuration.js';
 import { requestLimit } from '../middlewares/request-limit.js';
 import { errorHandler } from '../middlewares/handle-errors.js';

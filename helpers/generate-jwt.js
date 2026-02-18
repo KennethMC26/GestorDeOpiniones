@@ -6,12 +6,8 @@ export const generateJWT = (uid = '') => {
         const secret = process.env.SECRET_KEY || 'Llave_Secreta_Para_Opiniones_2026';
 
         jwt.sign(payload, secret, { expiresIn: '4h' }, (err, token) => {
-            if (err) {
-                console.log(err);
-                reject('No se pudo generar el token');
-            } else {
-                resolve(token);
-            }
+            if (err) reject('No se pudo generar el token');
+            else resolve(token);
         });
     });
 };

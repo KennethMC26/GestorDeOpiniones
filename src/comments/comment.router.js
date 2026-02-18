@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import { addComment, updateComment, deleteComment } from './comment.controller.js';
+import { addComment, updateComment, deleteComment, getComments } from './comment.controller.js';
 import { validateJWT } from '../../middlewares/validate-jwt.js';
 
 const router = Router();
 
+router.get('/', getComments);
 router.post('/', validateJWT, addComment);
 router.put('/:id', validateJWT, updateComment);
 router.delete('/:id', validateJWT, deleteComment);
